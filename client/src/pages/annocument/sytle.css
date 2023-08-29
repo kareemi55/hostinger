@@ -1,0 +1,32 @@
+.Annocument {
+  background-image: url(./images//patrick-hendry-hezNrE5QEa8-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  height: 50vh;
+  overflow-y: scroll;
+  /* items */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.text {
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 700;
+  font-style: italic;
+  font-family: georgia, palatino;
+  color: #f3f3f3;
+  font-size: 72px;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+h4 {
+  font-weight: 400;
+  color: #ffffff;
+  font-style: italic;
+  text-decoration: underline;
+}

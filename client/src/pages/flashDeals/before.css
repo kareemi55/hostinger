@@ -1,0 +1,20 @@
+.deal h3 {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  color: #7492c9;
+  font-size: 30px;
+  line-height: 1.4;
+  letter-spacing: 0px;
+  text-align: center;
+}
+.deal p {
+  font-weight: 400;
+  font-style: italic;
+  font-family: georgia, palatino;
+  color: rgba(10, 87, 10, 0.7);
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: 0px;
+  text-align: center;
+}

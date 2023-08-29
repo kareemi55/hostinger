@@ -1,0 +1,50 @@
+
+
+{/*
+
+import React from "react";
+import Ndata from "./Ndata";
+
+const Cart = () => {
+  return (
+    <>
+      <div className='row'>
+        {Ndata.map((val, index) => {
+          return (
+            <div className='col box'>
+              <div
+                className='newArrivalsPro'
+                style={{ display: "flex" }}
+                key={index}>
+                <div className=''>
+                  <img
+                    src={val.cover}
+                    style={{
+                      borderRadius: "15px",
+                      height: "150px",
+                      width: "170px",
+                    }}
+                    alt='NewArrivals pic'
+                    className='newArrivalsImg'
+                  />
+                </div>
+                <h4
+                  className='text-center'
+                  style={{ fontSize: "16px", fontWeight: "480" }}>
+                  {val.name}
+                </h4>
+
+                <span style={{ color: "#444" }}>${val.price}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+};
+
+export default Cart;
+
+
+*/ }

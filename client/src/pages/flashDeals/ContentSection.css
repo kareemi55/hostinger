@@ -1,0 +1,42 @@
+.content-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+  .content-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 720px;
+}
+
+.item-details {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.item-name {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.shop-button {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: underline;
+}
