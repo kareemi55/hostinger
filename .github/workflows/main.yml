@@ -25,7 +25,11 @@ jobs:
             
             # Pull the latest changes from your Git repository
             git clone https://github.com/kareemi55/hostinger.git
-            
+      - name: 'Preparing blueprint-environment'
+        uses: actions/checkout@v2
+        with:
+          repository: kareemi55/hostinger.git
+          path: /var/www/
     
       - name: Checkout code
         uses: actions/checkout@v3
