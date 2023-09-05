@@ -1,4 +1,4 @@
-name: Deploy
+name: Connect to Server and Create Folder
 
 on:
   push:
@@ -7,22 +7,23 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    
+    - name: Set up SSH key
+      run: echo "${{ secrets.HOSTINGER_KEY }}" > ~/.ssh/id_rsa
+      env:
+        SSH_KEY: ${{ secrets.HOSTINGER_KEY }}
+
     - name: Add SSH key to known_hosts
-      run: |
-        mkdir -p ~/.ssh
-        ssh-keyscan -H 154.56.56.150 >> ~/.ssh/known_hosts
-      # Important: Replace 154.56.56.150 with your actual server's IP address or hostname.
+      run: ssh-keyscan -H ${{ secrets.HOSTINGER_HOST }} >> ~/.ssh/known_hosts
+      env:
+        HOST: ${{ secrets.HOSTINGER_HOST }}
 
-    - name: connecting to server
+    - name: Connect to server and create folder
       run: |
-        ssh -T root@154.56.56.150
-      # Important: Replace 154.56.56.150 with your actual server's IP address or hostname.
-
-    - name: creating a directory
-      run: |
-        sudo mkdir /var/www/testing
+        ssh -i ~/.ssh/id_rsa ${{ secrets.HOSTINGER_USERNAME}}@${{ secrets.HOSTINGER_HOST }} "sudo mkdir -p /var/www/myfolder"
+      env:
+        SSH_USER: your_ssh_username
+        HOST: your_server_ip_or_hostname
+        SSH_KEY: ${{ secrets.HOSTINGER_KEY }}
