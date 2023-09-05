@@ -29,7 +29,7 @@ jobs:
           cd /var/www/hostinger/
 
           # Pull the latest changes from the Git repository
-          git pull origin main
+          sudo git pull origin main
 
       - name: Checkout code
         uses: actions/checkout@v3
