@@ -23,7 +23,6 @@ jobs:
           # Run a simple command on the server to verify the connection
           sudo ssh -p ${{ secrets.HOSTINGER_SSH_PORT }} ${{ secrets.HOSTINGER_USERNAME }}@${{ secrets.HOSTINGER_HOST }} "echo 'Connected to the server'"
 
-
       - name: Clone Git repository to /var/www/
         run: |
           # Clone the Git repository to /var/www/hostinger/
