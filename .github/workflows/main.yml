@@ -17,7 +17,7 @@ jobs:
           SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT }}
           SSH_USER: ${{ secrets.HOSTINGER_USERNAME }}
           SSH_KEY: ${{ secrets.HOSTINGER_PASSWORD }}
-          SSH_OPTIONS: -o LogLevel=DEBUG
+          SSH_OPTIONS: -vvv
 
       - name: Check SSH Connection
         run: |
