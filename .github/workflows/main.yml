@@ -10,62 +10,50 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - name: Set up SSH
-       run: |
-        mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -H ${{ secrets.HOSTINGER_HOST }} >> ~/.ssh/known_hosts
+      - name: SSH into Hostinger VPS
+        uses: invi5H/ssh-action@v1
+        with:
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USERNAME }}
+          SSH_KEY: ${{ secrets.HOSTINGER_PASSWORD }}
+      
 
-     - name: SSH into Hostinger VPS
-       run: |
-        ssh -T -o StrictHostKeyChecking=no root@154.56.56.150
-
-     - name: Check SSH Connection
-       run: |
-          # Debugging: Print SSH connection information
-          echo "SSH Host: ${{ secrets.HOSTINGER_HOST }}"
-          echo "SSH Port: ${{ secrets.HOSTINGER_SSH_PORT }}"
-          echo "SSH User: ${{ secrets.HOSTINGER_USERNAME }}"
-
-          # Run a simple command on the server to verify the connection
-          ssh -p ${{ secrets.HOSTINGER_SSH_PORT }} ${{ secrets.HOSTINGER_USERNAME }}@${{ secrets.HOSTINGER_HOST }} "echo 'Connected to the server'"
-
-     - name: Clone Git repository to /var/www/
-       run: |
+      - name: Clone Git repository to /var/www/
+        run: |
           # Clone the Git repository to /var/www/hostinger/
           sudo  git clone https://github.com/kareemi55/hostinger.git /var/www/hostinger/
 
-     - name: Pull latest changes
-       run: |
+      - name: Pull latest changes
+        run: |
           # Change the working directory to /var/www/hostinger/
           cd /var/www/hostinger/
 
           # Pull the latest changes from the Git repository
           sudo git pull origin main
 
-     - name: Checkout code
-       uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-     - name: Set up Node.js
-       uses: actions/setup-node@v2
-       with:
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
           node-version: 18
 
-     - name: Install dependencies
-       run: |
+      - name: Install dependencies
+        run: |
           cd /var/www/hostinger/server
           npm install -f
           cd ../client
           npm install -f
 
-     - name: Build React app
-       run: |
+      - name: Build React app
+        run: |
           cd client
           CI= npm run build
 
-     - name: Restart Node.js server
-       run: |
+      - name: Restart Node.js server
+        run: |
           pm2 restart front-end
           pm2 restart server
           systemctl restart apache2
