@@ -10,26 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: |
-          cd server
-          npm install -f
-          cd ../client
-          npm install -f
-
-      - name: Build React app
-        run: |
-          cd client
-          CI= npm run build
-
       - name: Deploy to Hostinger VPS
         uses: invi5H/ssh-action@v1
         
@@ -44,8 +24,32 @@ jobs:
             ssh ${{ steps.ssh.outputs.SERVER }} 
             
             # Pull the latest changes from your Git repository
-            git pull origin main
+            git clone https://github.com/kareemi55/hostinger.git
+            
+    
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: |
+          cd /var/www/hostinger/server
+          npm install -f
+          cd ../client
+          npm install -f
+
+      - name: Build React app
+        run: |
+          cd client
+          CI= npm run build
+
+
             
             # Restart your Node.js server (assuming you're using Node.js to run your server)
             pm2 restart front-end
             pm2 restart server 
+            systemctl restart apache2
