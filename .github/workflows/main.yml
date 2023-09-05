@@ -13,15 +13,20 @@ jobs:
       - name: SSH into Hostinger VPS
         uses: invi5H/ssh-action@v1
         with:
-          host: ${{ secrets.HOSTINGER_HOST }}
-          port: ${{ secrets.HOSTINGER_SSH_PORT }}
-          username: ${{ secrets.HOSTINGER_USERNAME }}
-          key: ${{ secrets.HOSTINGER_PASSWORD }}
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USERNAME }}
+          SSH_KEY: ${{ secrets.HOSTINGER_PASSWORD }}
+      
+      - name: Check SSH Connection
+        run: |
+          # Run a simple command on the server to verify the connection
+          ssh -p ${{ secrets.HOSTINGER_SSH_PORT }} ${{ secrets.HOSTINGER_USERNAME }}@${{ secrets.HOSTINGER_HOST }} "echo 'Connected to the server'"
 
       - name: Clone Git repository to /var/www/
         run: |
           # Clone the Git repository to /var/www/hostinger/
-           sudo git clone https://github.com/kareemi55/hostinger.git /var/www/hostinger/
+          git clone https://github.com/kareemi55/hostinger.git /var/www/hostinger/
 
       - name: Pull latest changes
         run: |
@@ -29,13 +34,13 @@ jobs:
           cd /var/www/hostinger/
 
           # Pull the latest changes from the Git repository
-          sudo git pull origin main
+          git pull origin main
 
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: 18
 
