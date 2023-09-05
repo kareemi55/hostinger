@@ -25,7 +25,7 @@ jobs:
 
     - name: Connect to server and create folder
       run: |
-        ssh -i ~/.ssh/id_rsa ${{ secrets.HOSTINGER_USERNAME }}@${{ secrets.HOSTINGER_HOST }} "sudo mkdir -p /var/www/myfolder"
+        ssh -i ~/.ssh/id_rsa ${{ secrets.HOSTINGER_USERNAME }}@${{ secrets.HOSTINGER_HOST }} "sudo mkdir -p /var/www/testing"
       env:
         SSH_USER: ${{ secrets.HOSTINGER_USERNAME }}
         HOST: ${{ secrets.HOSTINGER_HOST }}
