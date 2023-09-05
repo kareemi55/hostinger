@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: SSH into Hostinger VPS
         run: |
-          ssh root@154.56.56.150
+          ssh -T root@154.56.56.150
           
       - name: Check SSH Connection
         run: |
