@@ -29,3 +29,4 @@ jobs:
       env:
         SSH_USER: ${{ secrets.HOSTINGER_USERNAME }}
         HOST: ${{ secrets.HOSTINGER_HOST }}
+
