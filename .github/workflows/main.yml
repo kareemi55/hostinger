@@ -25,7 +25,7 @@ jobs:
 
     - name: Connect to server 
       run: |
-        ssh -i ~/.ssh/id_rsa ${{ secrets.HOSTINGER_USERNAME }}@${{ secrets.HOSTINGER_HOST }}
-    - name: cloning the git repo
-      run: |
+        ssh -i ~/.ssh/id_rsa ${{ secrets.HOSTINGER_USERNAME }}@${{ secrets.HOSTINGER_HOST }} << EOF
+        cd var/www/
         git clone https://github.com/kareemi55/hostinger.git
+        EOF
