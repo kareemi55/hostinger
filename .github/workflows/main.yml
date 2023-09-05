@@ -23,10 +23,9 @@ jobs:
       env:
         HOST: ${{ secrets.HOSTINGER_HOST }}
 
-    - name: Connect to server and create folder
+    - name: Connect to server 
       run: |
-        ssh -i ~/.ssh/id_rsa ${{ secrets.HOSTINGER_USERNAME }}@${{ secrets.HOSTINGER_HOST }} "sudo mkdir -p /var/www/testing"
-      env:
-        SSH_USER: ${{ secrets.HOSTINGER_USERNAME }}
-        HOST: ${{ secrets.HOSTINGER_HOST }}
-
+        ssh -i ~/.ssh/id_rsa ${{ secrets.HOSTINGER_USERNAME }}@${{ secrets.HOSTINGER_HOST }}
+    - name: cloning the git repo
+      run: |
+        git clone https://github.com/kareemi55/hostinger.git
