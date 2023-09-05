@@ -27,7 +27,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: kareemi55/hostinger.git
-          path: /var/www/
     
       - name: Checkout code
         uses: actions/checkout@v3
