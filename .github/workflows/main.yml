@@ -17,7 +17,7 @@ jobs:
           SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT }}
           SSH_USER: ${{ secrets.HOSTINGER_USERNAME }}
           SSH_KEY: ${{ secrets.HOSTINGER_PASSWORD }}
-          shell: bash
+        shell: bash
 
       - name: Clone Git repository to /var/www/
         run: |
@@ -33,11 +33,12 @@ jobs:
           # Pull the latest changes from the Git repository
           git pull origin main
         shell: bash
+
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2  # Updated to v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2  # Updated to v2
         with:
           node-version: 18
 
@@ -48,14 +49,13 @@ jobs:
           cd ../client
           npm install -f
 
-     - name: Build React app
-       run: |
+      - name: Build React app
+        run: |
           cd client
           CI= npm run build
 
-
-            
-            # Restart your Node.js server (assuming you're using Node.js to run your server)
-            pm2 restart front-end
-            pm2 restart server 
-            systemctl restart apache2
+      - name: Restart Node.js server
+        run: |
+          pm2 restart front-end
+          pm2 restart server
+          systemctl restart apache2
