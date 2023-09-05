@@ -3,7 +3,7 @@ name: Deploy to Hostinger VPS
 on:
   push:
     branches:
-      - main  # Change this to your main branch name
+      - main
 
 jobs:
   deploy:
@@ -17,13 +17,11 @@ jobs:
           SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT }}
           SSH_USER: ${{ secrets.HOSTINGER_USERNAME }}
           SSH_KEY: ${{ secrets.HOSTINGER_PASSWORD }}
-        shell: bash
 
       - name: Clone Git repository to /var/www/
         run: |
           # Clone the Git repository to /var/www/
           git clone https://github.com/yourusername/yourrepository.git /var/www/
-        shell: bash
 
       - name: Pull latest changes
         run: |
@@ -32,13 +30,12 @@ jobs:
 
           # Pull the latest changes from the Git repository
           git pull origin main
-        shell: bash
 
       - name: Checkout code
-        uses: actions/checkout@v2  # Updated to v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2  # Updated to v2
+        uses: actions/setup-node@v3
         with:
           node-version: 18
 
