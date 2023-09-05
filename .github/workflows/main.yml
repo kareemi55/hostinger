@@ -18,10 +18,6 @@ jobs:
           SSH_USER: ${{ secrets.HOSTINGER_USERNAME }}
           SSH_KEY: ${{ secrets.HOSTINGER_PASSWORD }}
       
-      - name: Check SSH Connection
-        run: |
-          # Run a simple command on the server to verify the connection
-          sudo ssh -p ${{ secrets.HOSTINGER_SSH_PORT }} ${{ secrets.HOSTINGER_USERNAME }}@${{ secrets.HOSTINGER_HOST }} "echo 'Connected to the server'"
 
       - name: Clone Git repository to /var/www/
         run: |
