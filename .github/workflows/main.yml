@@ -22,7 +22,7 @@ jobs:
       - name: Clone Git repository to /var/www/
         run: |
           # Clone the Git repository to /var/www/hostinger/
-          git clone https://github.com/kareemi55/hostinger.git /var/www/hostinger/
+          sudo  git clone https://github.com/kareemi55/hostinger.git /var/www/hostinger/
 
       - name: Pull latest changes
         run: |
@@ -30,7 +30,7 @@ jobs:
           cd /var/www/hostinger/
 
           # Pull the latest changes from the Git repository
-          git pull origin main
+          sudo git pull origin main
 
       - name: Checkout code
         uses: actions/checkout@v2
