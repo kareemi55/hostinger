@@ -28,7 +28,7 @@ jobs:
       - name: Build React app
         run: |
           cd client
-          npm run build -f
+          CI= npm run build
 
       - name: Deploy to Hostinger VPS
         uses: invi5H/ssh-action@v1
