@@ -13,10 +13,10 @@ jobs:
      - name: SSH into Hostinger VPS
        uses: invi5H/ssh-action@v1
        with:
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_PORT: ${{ secrets.SSH_PORT }}
-          SSH_USER: ${{ secrets.SSH_USER }}
-          SSH_KEY: ${{ secrets.SSH_KEY }}
+          SSH_HOST: ${{ secrets.HOSTINGER_HOST }}
+          SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT }}
+          SSH_USER: ${{ secrets.HOSTINGER_USERNAME }}
+          SSH_KEY: ${{ secrets.HOSTINGER_PASSWORD }}
        env:
           SERVER: /var/www/  # Set the server directory where you want to execute the command
           REPO_URL: https://github.com/kareemi55/hostinger.git
