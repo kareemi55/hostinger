@@ -19,12 +19,10 @@ jobs:
           SSH_KEY: ${{ secrets.HOSTINGER_PASSWORD }}
           SSH_PORT: ${{ secrets.HOSTINGER_SSH_PORT }}  # Use the appropriate SSH port
         env:
-          SERVER: /var/www/ 
           script: |
             ssh ${{ steps.ssh.outputs.SERVER }} 
             
             # Pull the latest changes from your Git repository
-            git clone https://github.com/kareemi55/hostinger.git
       - name: 'Preparing blueprint-environment'
         uses: actions/checkout@v2
         with:
