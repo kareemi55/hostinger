@@ -27,7 +27,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: kareemi55/hostinger.git
-    
+      - name: git pull origin main
+        run: git pull origin main 
+        
       - name: Checkout code
         uses: actions/checkout@v3
 
