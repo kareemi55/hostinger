@@ -20,13 +20,13 @@ jobs:
 
       - name: Clone Git repository to /var/www/
         run: |
-          # Clone the Git repository to /var/www/
-          git clone https://github.com/yourusername/yourrepository.git /var/www/
+          # Clone the Git repository to /var/www/hostinger/
+          git clone https://github.com/yourusername/yourrepository.git /var/www/hostinger/
 
       - name: Pull latest changes
         run: |
-          # Change the working directory to /var/www/
-          cd /var/www/
+          # Change the working directory to /var/www/hostinger/
+          cd /var/www/hostinger/
 
           # Pull the latest changes from the Git repository
           git pull origin main
