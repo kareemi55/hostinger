@@ -32,11 +32,12 @@ jobs:
         cd client/
         npm install -f 
         npm run build 
-        pm2 serve build
+        pm2 serve build -f
         cd ..
         cd server/
         npm install -f 
-        pm2 start server.js
+        pm2 start server.js -f 
+        systemctl restart apache2
 
         
         EOF
