@@ -32,9 +32,11 @@ jobs:
         cd client/
         npm install -f 
         npm run build 
+        pm2 serve build
         cd ..
         cd server/
         npm install -f 
+        pm2 start server.js
 
         
         EOF
