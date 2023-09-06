@@ -31,12 +31,10 @@ jobs:
         cd hostinger
         cd client/
         npm install -f 
-        npm build 
+        npm run build 
         cd ..
         cd server/
         npm install -f 
-        pm2 restart front-end
-        pm2 restart server 
-        systemctl restart apache2
+
         
         EOF
