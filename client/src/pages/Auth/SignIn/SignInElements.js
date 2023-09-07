@@ -68,7 +68,7 @@ export const FormCont = styled.form`
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  background-color: #f0f0f0;
+  background-color: white;
   // background-color: #1e1f24;
    border: 12px solid #f0f0f0;
   border-radius: 15px;
@@ -146,7 +146,7 @@ export const FormInput = styled.input`
   height: 100%;
   text-align: center;
   transition: all ease-in-out 0.3s;
-  color: #fff !important;
+  color: black !important;
 
   &:focus {
     width: 80%;

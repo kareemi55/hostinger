@@ -26,14 +26,12 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/order", orderRoutes);
-app.use("/api/v1/test",(req, res) => {
-  res.send('testing server)
-})
+
 
 
 //rest api
 app.get("/", (req, res) => {
-  res.send("<h1>Welcome to lubick  ecommerce app</h1>");
+  res.send("<h1>Welcome to imantiles private limited</h1>");
 });
 
 

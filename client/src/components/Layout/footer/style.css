@@ -36,6 +36,7 @@
 .copyR {
   display: flex;
   justify-content: center;
+  margin-top: 15%;
 }
 .h-5 {
   max-width: 40%;

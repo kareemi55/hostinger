@@ -16,7 +16,7 @@ const Footer = () => {
         {" "}
         <div className='up-Items  d-flex justify-around items-center '>
           <div className='text-sm'>
-            <img className='logo' src={logo} alt='logo bii baaa aga' />
+            
             <span className='font-semibold'>IMAN TILES </span>
           </div>
           <div className='d-flex justify-around space-x-4'>
@@ -40,20 +40,13 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className='payment'>
-          <img src={paymentCards1} alt='Payment cards' className='h-5' />
-          <img src={paymentCards2} alt='Payment cards' className='h-5' />
-          <img src={paymentCards3} alt='Payment cards' className='h-5' />
-          <img src={paymentCards4} alt='Payment cards' className='h-5' />
-          <img src={paymentCards5} alt='Payment cards' className='h-5' />
-          <img src={paymentCards6} alt='Payment cards' className='h-5' />
-        </div>
+        
         <div className='copyR text-sm text-center'>
           <a
             className='font-semibold'
             href='https://cloudlem.com/'
             target='_blank'>
-            CLOUDLEM
+            cloudlem private limited 
           </a>{" "}
           &copy; {new Date().getFullYear()}
         </div>

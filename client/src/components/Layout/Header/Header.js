@@ -56,7 +56,7 @@ const Header = () => {
                       fontWeight: "700",
                       color: "#f3f3f3",
                     }}>
-                    IMAN TILES private limited 
+                    IMAN TILES
                   </span>
                 </div>
               </Link>
