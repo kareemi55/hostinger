@@ -54,13 +54,13 @@ const Header = () => {
                       marginLeft: "10px",
                       fontSize: "24px",
                       fontWeight: "700",
-                      color: "#f3f3f3",
+                      color: "#000000",
                     }}>
                     IMAN TILES
                   </span>
                 </div>
               </Link>
-              <SearchInput />
+              
               <ul className='navbar-nav '>
                 <li className='nav-item'>
                   <Link to='/' className='nav-link'>
@@ -102,6 +102,7 @@ const Header = () => {
                         Login
                       </NavLink>
                     </li>
+
                   </>
                 ) : (
                   <>
@@ -175,6 +176,9 @@ const Header = () => {
                   </NavLink>
                 </li>
               </ul>
+               <span className="search">
+               <SearchInput />
+               </span>
             </div>
           </div>
         </nav>

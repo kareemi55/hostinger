@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className='copyR text-sm text-center'>
+        {/* <div className='copyR text-sm text-center'>
           <a
             className='font-semibold'
             href='https://cloudlem.com/'
@@ -49,7 +49,7 @@ const Footer = () => {
             cloudlem private limited 
           </a>{" "}
           &copy; {new Date().getFullYear()}
-        </div>
+        </div> */}
       </div>
     </footer>
   );

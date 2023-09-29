@@ -8,7 +8,7 @@ const NewArrivals = () => {
   const newIcon = {
     width: "70px",
     height: "40px",
-    color: "#DF711B",
+    color: "#198754",
   };
 
   return (
@@ -17,7 +17,7 @@ const NewArrivals = () => {
         <div className='container'>
           <div className='heading1 d_flex1'>
             <div className='heading-left text-center mb-5'>
-              <h2>New Arrivals </h2>
+              <h3>New Arrivals </h3>
             </div>
             <div className='heading-right1 d-none '>
               <span>View all</span>

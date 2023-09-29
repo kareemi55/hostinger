@@ -8,14 +8,15 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Home.css";
 // images
 
-import image1 from "./images/page.jpg";
+import image1 from "./images/tiles-1.jpg";
 import image2 from "./images/slider-2.jpg";
 import image3 from "./images/stair.jpg";
+import image4 from "./images/tiles.jpg";
 
 const Carousel = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [isFadeIn, setIsFadeIn] = useState(false);
-  const images = [image1, image2, image3];
+  const images = [image1, image2, image3, image4];
 
   useEffect(() => {
     const timer = setInterval(() => {

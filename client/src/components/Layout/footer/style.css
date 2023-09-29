@@ -1,8 +1,7 @@
 .Footer {
-  background: linear-gradient(110deg, #007842 60%, #1b316a 60%);
+  background-color: #146640 ;
   /* background-position: 0% 0%; */
   color: #f3f3f3;
-  height: 250px;
   width: auto;
   /* effect */
   transform: none;
@@ -22,6 +21,7 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 5%;
+  padding: 30px 0px 30px 0px;
   /* padding-top: 1.5%; */
 }
 .Footer a {

@@ -6,12 +6,13 @@ import SliderHome from "./SliderHome";
 const TopCarousel = () => {
   return (
     <>
-      <section className='mainContCarousel d-flex' style={{ marginTop: "3%" }}>
-        <div className='sideBarCont'>
-          <Sidebar />
-        </div>
+      <section className='mainContCarousel d-flex' style={{ marginTop: "-3%" }}>
+       
         <div className='sliderCont'>
           <SliderHome />
+          <div className='sideBarCont'>
+          <Sidebar />
+        </div>
         </div>
       </section>
     </>

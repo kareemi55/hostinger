@@ -2,6 +2,7 @@
 /*---------product-----------*/
 .ProductCont{ 
   margin: 2px;
+  /* width: 90%; */
   
   
 }
@@ -12,14 +13,16 @@
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
     /* margin: 10px; */
     height: auto;
-    padding: 10px;
+    /* padding: 10px; */
   }
-  
+  .product:hover{
+    background-color: #dde8d9;
+  }
   .proImgCont {
     width: 100%;
     height: auto;
     
-    border-radius: 15px;
+    /* border-radius: 15px; */
     box-shadow: rgba(8, 3, 92, 0.09) 0px 1px 3px;
     margin-bottom: 20px;
     display: flex;
@@ -27,14 +30,14 @@
   }
   .proImg {
     width: 100%;
-    height: 120px;
-    border-radius: 15px;
+    height: 295px;
+    /* border-radius: 15px; */
   }
   .discount {
     position: absolute;
     top: 0;
     left: 0;
-    background: #e94560;
+    background: rgb(233, 131, 55);
     padding: 3px 10px;
     font-size: 12px;
     border-radius: 50px;
@@ -53,11 +56,14 @@
   .product .price {
     display: flex;
     justify-content: space-between;
-    color: #e94560;
+    color: rgb(233, 131, 55);
+  }
+  .price{
+    padding: 0px 15px 0px 11px;
   }
   .price button {
     background: none;
-    color: #e94560;
+    color: rgb(233, 131, 55);
     font-size: 20px;
     transition: 0.5s;
     border: 1px solid rgb(3 0 71 / 9%);
@@ -67,7 +73,7 @@
   }
   .price button:hover {
     cursor: pointer;
-    background-color: #e94560;
+    background-color: rgb(233, 131, 55);
     color: #fff;
   }
   .product-like {
@@ -95,7 +101,7 @@
     border: none;
     outline: none;
     margin-top: 4px;
-    background: #e94560;
+    background: rgb(233, 131, 55);
     color: #fff;
     width: 100%;
     border-radius: 15px;
@@ -103,7 +109,7 @@
   
   .moreBtn1:hover {
     opacity: 0.9;
-    background: #e94560;
+    background: #198754;
   }
   
   /*---------product-----------*/

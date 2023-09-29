@@ -134,85 +134,25 @@ const FlashDeals = () => {
 
   return (
     <>
+    <div className="f_flex">
+    <h2>Flash Deals</h2>
+    </div>
       <div id='FlashDeals' className='  mt-3 mainContFreshDeals'>
         <div className='row'>
-          <div className=' col-md-3 filters  '>
-            <h4 className=''>Filter By Category</h4>
-            <div className=''>
-              {categories?.map((c) => (
-                <Checkbox
-                  key={c._id}
-                  onChange={(e) => handleFilter(e.target.checked, c._id)}>
-                  {c.name}
-                </Checkbox>
-              ))}
-            </div>
-            {/* price filter  */}
-            <h4 className=' mt-4'>Filter By Price</h4>
-            <div className='d-flex '>
-              <Radio.Group onChange={(e) => setRadio(e.target.value)}>
-                {Prices?.map((p) => (
-                  <div key={p._id}>
-                    <Radio value={p.array}>{p.name}</Radio>
-                  </div>
-                ))}
-              </Radio.Group>
-            </div>
-            <div className='d-flex flex-column'>
-              <button
-                className='btn-resetFilter'
-                onClick={() => window.location.reload()}>
-                RESET FILTERS
-              </button>
-            </div>
-            <div className='m-2 p-3 loadMoreCont'>
-              {products && products.length < total && (
-                <button
-                  className=' loadmore'
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setPage(page + 1);
-                  }}>
-                  {loading ? (
-                    "Loading ..."
-                  ) : (
-                    <>
-                      Loadmore <AiOutlineReload />
-                    </>
-                  )}
-                </button>
-              )}
-            </div>
-          </div>
-
           <section className='flash col-md-9'>
-            <div className='row'>
-              <div className='col-12'>
-                <div className='heading1 f_flex'>
-                  <div className='f_flex1'>
-                    <MdFlashOn
-                      style={{
-                        width: "40px",
-                        height: "40px",
-                        color: "#DF711B",
-                      }}
-                    />
-                    <h2>Flash Deals</h2>
-                  </div>
-                  <div className=''>
-                    <span>View all</span>
-                    <BsPlayFill style={moreIcon} />
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div className='ProductsItems'>
               {products?.map((product) => (
                 <ProductCart key={product._id} product={product} />
               ))}
             </div>
           </section>
+          {/* <div className='.shop-button-fullwidth'>
+                    <span>View all</span>
+                    <BsPlayFill style={moreIcon} />
+                  </div> */}
+            <button className="shop-button-fullwidth">
+              view all
+            </button>
         </div>
       </div>
     </>

@@ -58,3 +58,8 @@
   
 
 }
+@media (max-width: 767px) {
+  .searchh {
+    display: none;
+  }
+}

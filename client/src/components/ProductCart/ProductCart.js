@@ -23,15 +23,15 @@ const ProductCart = (props) => {
   const moreIcon = {
     width: "30px",
     height: "30px",
-    color: "#e94560",
+    color: "#00000",
   };
 
   return (
-    <div className='col-sm-4  ProductCont ' key={p._id}>
+    <div className='col-sm-11  ProductCont ' key={p._id}>
       <div className='product'>
         <div className=''>
           {/* <span className="discount">% Off</span> */}
-          <div className='proImgCont'>
+          <div className='proImgCont' >
             <img
               src={`/api/v1/product/product-photo/${p._id}`}
               alt=''
@@ -49,7 +49,7 @@ const ProductCart = (props) => {
           </div>
         </div>
         <div className=''>
-          <h4 style={{ textAlign: "center", color: "#444" }}>{p.name}</h4>
+          <h4 style={{ textAlign: "center",paddingTop:"10px", color: "#444" }}>{p.name}</h4>
           <div
             className='rate'
             style={{

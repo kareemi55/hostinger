@@ -11,7 +11,25 @@
 }*/
 .f_flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  color: #198754;
+}
+#FlashDeals{
+  padding-bottom: 160px;
+}
+
+  .f_flex h2{
+    font-weight: 500;
+    font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    color: #198754;
+    font-size: 45px;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    text-align: center;
+    border-bottom: 3px solid #198754;
+    width: 342px;
+    padding-top:96px
 }
 .heading i {
   color: #000000;
@@ -33,6 +51,12 @@
   text-align: right;
   color: rgb(17, 17, 17);
 }
+.row{
+  justify-content: center;
+  padding-top:70px;
+  padding-bottom: 70px;
+  
+}
 
 /* ==================
 filters
@@ -42,9 +66,12 @@ filters
   text-align: center;
 }
 .filters h4 {
+  font-family: sans-serif;
+  font-style: inherit;
   margin-top: 100px;
-  color: rgb(0, 0, 0) !important;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.337);
+  color: #198754 !important;
+
+
 }
 
 .ant-checkbox-wrapper:first-of-type {
@@ -93,11 +120,35 @@ filters
 
 .ProductsItems {
   display: grid;
-  grid-template-columns: repeat(3, 600px); /* Set a single column */
+  grid-template-columns: repeat(4, 375px); /* Set a single column */
   grid-template-rows: repeat(2, 1fr); /* Set 3 equal-height rows */
   column-gap: 0%;
-  row-gap: 1%;
+  row-gap: 3%;
 }
+.shop-button-fullwidth {
+  width: 135px;
+  background-color: #fff;
+  border: 2px solid #198754;
+  color: #198754;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  left: 45%;
+  right: 45%;
+  margin-top: 3rem;
+  position: relative;
+  left: -707px;
+  height: 58px;
+  top: 1022px;
+}
+
+.shop-button-fullwidth:hover {
+  background-color: #198754;
+  color: #fff;
+}
+
 
 /* Media query for responsive adjustments */
 @media screen and (max-width: 768px) {

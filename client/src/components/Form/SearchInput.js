@@ -23,7 +23,7 @@ const SearchInput = () => {
     }
   };
   return (
-    <div>
+    <div className="searchh">
       <form
         className='d-flex search-box'
         role='search'
@@ -31,7 +31,7 @@ const SearchInput = () => {
         <input
         className="input-search"
           type='search'
-          placeholder='Brown Foothpath Tiles'
+          placeholder='Search...'
           aria-label='Search'
           value={values.keyword}
           onChange={(e) => setValues({ ...values, keyword: e.target.value })}

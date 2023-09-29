@@ -18,7 +18,7 @@ const Home = () => {
         <BeforeDeal />
         <FlashDeals />
         <FlashDeals2 />
-        <TopCategories />
+        {/* <TopCategories /> */}
         <NewArrivals />
         <Annocument />
         <Wrapper />
